@@ -1,6 +1,9 @@
 import Header from './Header'
 import Hero from './Hero'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import TopRatedMovie from './TopRatedMovie'
+import TopRatedShows from './TopRatedShows'
+import TrendingMovie from './TrendingMovie'
+import TrendingShows from './TrendingShows'
 
 function Main() {
 
@@ -9,6 +12,10 @@ function Main() {
             <div >
                 <Header />
                 <Hero />
+                <TrendingMovie/>
+                <TopRatedMovie/>
+                <TrendingShows/>
+                <TopRatedShows/>
             </div>
         </>
     )

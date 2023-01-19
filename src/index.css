@@ -9,6 +9,11 @@ body {
     sans-serif, -apple-system, BlinkMacSystemFont, ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0f0f0f;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 code {
@@ -17,11 +22,6 @@ code {
 }
 
 .popup-background {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   background: rgba(2, 2, 11, 0.5);
-  z-index: 10;
 }
