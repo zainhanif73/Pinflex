@@ -13,7 +13,6 @@ function TopRatedMovie() {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log(data)
   return (
     <div className='mt-8'>
       <span className='ml-8 mr-4 flex justify-between'>
@@ -26,8 +25,8 @@ function TopRatedMovie() {
       <span className='mx-8 mt-4 flex overflow-scroll'>
         {data && data.length && data.map((data1) => {
           return (
-            <div key={data1.poster_path} className="w-[400px] ml-2 cursor-pointer">
-              <div className='popup-background1 z-[10]'>
+            <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
+              <div >
                 <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
               </div>
             </div>

@@ -25,3 +25,10 @@ code {
   position: relative;
   background: rgba(2, 2, 11, 0.5);
 }
+
+
+.popup-background1 {
+  position: relative;
+  background: rgba(58, 28, 28, 0.3);
+  z-index: 5000;
+}

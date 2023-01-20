@@ -8,7 +8,6 @@ function Hero() {
 
   return (
     <>
-
         <div className='flex justify-around absolute top-0' style={{ width: "100%", height: "100vh", backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat', backgroundImage: 'url(https://image.tmdb.org/t/p/original//sBOenwOZGRN5nZZGw4TxwtnfrEf.jpg)' }}>
           <div className='flex justify-around popup-background' style={{width:"inherit"}}>
             <span className=''>
