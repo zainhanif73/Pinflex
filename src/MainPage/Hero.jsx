@@ -1,8 +1,6 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Fade, Zoom } from 'react-reveal';
 import { useNavigate } from 'react-router-dom';
-import TrendingMovie from './TrendingMovie';
 
 function Hero() {
 

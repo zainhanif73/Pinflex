@@ -1,3 +1,4 @@
+import Footer from './Footer'
 import Header from './Header'
 import Hero from './Hero'
 import TopRatedMovie from './TopRatedMovie'
@@ -16,6 +17,7 @@ function Main() {
                 <TopRatedMovie/>
                 <TrendingShows/>
                 <TopRatedShows/>
+                <Footer/>
             </div>
         </>
     )
