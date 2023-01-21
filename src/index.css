@@ -32,3 +32,17 @@ code {
   background: rgba(58, 28, 28, 0.3);
   z-index: 5000;
 }
+
+.btnChec {
+  border: 2px solid transparent;
+  background-color: red;
+  color: #fff;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 0 7px 8px rgb(255 0 0 / 30%);
+  z-index: 1000;
+  transition: box-shadow .3s ease;
+  position: relative;
+}

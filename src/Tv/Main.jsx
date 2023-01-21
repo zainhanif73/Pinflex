@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../MainPage/Header'
-import Hero from "../Movie/Hero"
+import Hero from "./Hero"
 import Footer from "../MainPage/Footer"
 import Similar from "./Similar"
 import { useEffect } from 'react'

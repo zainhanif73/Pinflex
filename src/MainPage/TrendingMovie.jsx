@@ -3,16 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function TrendingMovie() {
-    const [data, setdata] = useState(0);
-    const route = useNavigate();
-  
-    useEffect(() => {
-      axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c8b147e9fe4390650885295607b0a593&page=1`)
-        .then((response) => { setdata(response.data.results) })
-        .catch((error) => console.error(error))
-    }, [])
+  const [data, setdata] = useState(0);
+  var [show, setshow] = useState(false);
+  const route = useNavigate();
 
-    
+  useEffect(() => {
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c8b147e9fe4390650885295607b0a593&page=1`)
+      .then((response) => { setdata(response.data.results) })
+      .catch((error) => console.error(error))
+  }, [])
 
   return (
     <div className='mt-[90vh]'>
@@ -26,9 +25,11 @@ function TrendingMovie() {
       <span className='mx-8 mt-4 flex overflow-scroll'>
         {data && data.length && data.map((data1) => {
           return (
-            <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
-              <div >
+            <div key={data1.poster_path} className="relative w-[175px] ml-2 cursor-pointer">
+              <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150' onMouseEnter={() => { show = true; console.log(show); setshow(true) }} onMouseLeave={() => { show = false; console.log(show); setshow(false) }} >
                 <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
+                {/* <div className='btnChec'>
+                </div> */}
               </div>
             </div>
           )

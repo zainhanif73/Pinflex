@@ -12,7 +12,7 @@ function Hero({ id, setid }) {
 
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=81ab096fe7e14921b2483fbc2b423c52`)
+        axios.get(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=81ab096fe7e14921b2483fbc2b423c52`)
             .then((res) => {
                 setCast(res.data.cast)
             })
@@ -20,7 +20,7 @@ function Hero({ id, setid }) {
                 console.error(error.data)
             })
 
-        axios.get(`https://api.themoviedb.org/3/movie/${id}?Expires=Thu%2C%2015%20Apr%202030%2020%3A00%3A00%20GMT&api_key=81ab096fe7e14921b2483fbc2b423c52`)
+        axios.get(`https://api.themoviedb.org/3/tv/${id}?Expires=Thu%2C%2015%20Apr%202030%2020%3A00%3A00%20GMT&api_key=81ab096fe7e14921b2483fbc2b423c52`)
             .then((res) => {
                 setData(res.data);
             })

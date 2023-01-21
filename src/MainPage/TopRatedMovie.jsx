@@ -26,8 +26,9 @@ function TopRatedMovie() {
         {data && data.length && data.map((data1) => {
           return (
             <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
-              <div >
+              <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
                 <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
+                
               </div>
             </div>
           )
