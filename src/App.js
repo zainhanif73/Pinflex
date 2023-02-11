@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Main from "./MainPage/Main";
 import MovieDetail from "./Movie/Main";
 import TvDetail from "./Tv/Main";
+import AllMovie from "./AllMovie/Main"
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           path="movie"
           element={
             <Suspense fallback={<div></div>}>
-              <MovieDetail />
+              <AllMovie />
             </Suspense>
           }
         />

@@ -1,0 +1,112 @@
+import React from 'react'
+
+function SearchFiler() {
+    return (
+        <>
+            <div className='flex mt-4'>
+                <div className='ml-16 w-[400px] flex' >
+                    <input className='rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Movie' type="text" name="" id="" />
+                    <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white'>Search</button>
+                </div>
+                <div className='ml-4'>
+                    <span>
+                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                            <option value="Action" >Action</option>
+                            <option value="Adventure" >Adventure</option>
+                            <option value="Animation" >Animation</option>
+                            <option value="Comedy" >Comedy</option>
+                            <option value="Documentary" >Documentary</option>
+                            <option value="Drama" >Drama</option>
+                            <option value="Family" >Family</option>
+                            <option value="Fantasy" >Fantasy</option>
+                            <option value="History" >History</option>
+                            <option value="Horror" >Horror</option>
+                            <option value="Music" >Music</option>
+                            <option value="Mystery" >Mystery</option>
+                            <option value="Romance" >Romance</option>
+                            <option value="Science Fiction" >Science Fiction</option>
+                            <option value="Tv Movie" >Tv Movie</option>
+                            <option value="Thriller" >Thriller</option>
+                            <option value="War" >War</option>
+                            <option value="Western" >Western</option>
+                        </select>
+                    </span>
+                    <span className='ml-4'>
+                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                            <option value="1971" >1971</option>
+                            <option value="1972" >1972</option>
+                            <option value="1973" >1973</option>
+                            <option value="1974" >1974</option>
+                            <option value="1975" >1975</option>
+                            <option value="1976" >1976</option>
+                            <option value="1977" >1977</option>
+                            <option value="1978" >1978</option>
+                            <option value="1979" >1979</option>
+                            <option value="1980" >1980</option>
+                            <option value="1981" >1981</option>
+                            <option value="1982" >1982</option>
+                            <option value="1983" >1983</option>
+                            <option value="1984" >1984</option>
+                            <option value="1985" >1985</option>
+                            <option value="1986" >1986</option>
+                            <option value="1987" >1987</option>
+                            <option value="1988" >1988</option>
+                            <option value="1989" >1989</option>
+                            <option value="1990" >1990</option>
+                            <option value="1991" >1991</option>
+                            <option value="1992" >1992</option>
+                            <option value="1993" >1993</option>
+                            <option value="1994" >1994</option>
+                            <option value="1995" >1995</option>
+                            <option value="1996" >1996</option>
+                            <option value="1997" >1997</option>
+                            <option value="1998" >1998</option>
+                            <option value="1999" >1999</option>
+                            <option value="2000" >2000</option>
+                        </select>
+                    </span>
+                    <span className='ml-4'>
+                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                            <option value="Andorra" >Andorra</option>
+                            <option value="United Arab Emirates" >United Arab Emirates</option>
+                            <option value="Afghanistan" >Afghanistan</option>
+                            <option value="Antigua and Barbuda" >Antigua and Barbuda</option>
+                            <option value="Anguilla" >Anguilla</option>
+                            <option value="Albania" >Albania</option>
+                            <option value="Armenia" >Armenia</option>
+                            <option value="Netherlands Antilles" >Netherlands Antilles</option>
+                            <option value="Angola" >Angola</option>
+                            <option value="Argentina" >Argentina</option>
+                            <option value="American Samoa" >American Samoa</option>
+                            <option value="Australia" >Australia</option>
+                            <option value="Aruba" >Aruba</option>
+                            <option value="Azerbaijan" >Azerbaijan</option>
+                            <option value="Bosnia and Herzegovina" >Bosnia and Herzegovina</option>
+                            <option value="Barbados" >Barbados</option>
+                            <option value="Bangladesh" >Bangladesh</option>
+                            <option value="Belgium" >Belgium</option>
+                            <option value="Burkina Faso" >Burkina Faso</option>
+                            <option value="Bulgaria" >Bulgaria</option>
+                            <option value="Bahrain" >Bahrain</option>
+                            <option value="Burundi" >Burundi</option>
+                            <option value="Benin" >Benin</option>
+                            <option value="Bermuda" >Bermuda</option>
+                            <option value="Brunei Darussalam" >Brunei Darussalam</option>
+                            <option value="Bolivia" >Bolivia</option>
+                            <option value="Brazil" >Brazil</option>
+                            <option value="Bahamas" >Bahamas</option>
+                            <option value="Bhutan" >Bhutan</option>
+                            <option value="Burma" >Burma</option>
+                            <option value="South Georgia and the south sandwich islands">South Georgia and the south sandwich islands</option>
+                        </select>
+                    </span>
+                    <span style={{ transition: "box-shadow .3s ease" }} className='px-4 py-4 rounded-[12px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'>
+                      Apply Filter
+                    </span>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default SearchFiler

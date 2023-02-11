@@ -33,6 +33,12 @@ code {
   z-index: 5000;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
 .btnChec {
   border: 2px solid transparent;
   background-color: red;
