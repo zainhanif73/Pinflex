@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import Hero from './Hero'
@@ -7,11 +8,11 @@ import TrendingMovie from './TrendingMovie'
 import TrendingShows from './TrendingShows'
 
 function Main() {
-
+    const [click, setClick] = useState(0);
     return (
         <>
             <div >
-                <Header />
+                <Header click={click} setClick={setClick}/>
                 <Hero />
                 <TrendingMovie/>
                 <TopRatedMovie/>

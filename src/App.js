@@ -1,9 +1,10 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Main from "./MainPage/Main";
 import MovieDetail from "./Movie/Main";
 import TvDetail from "./Tv/Main";
 import AllMovie from "./AllMovie/Main"
+import Tv from "./AllTv/Main";
 
 function App() {
   return (
@@ -61,7 +62,7 @@ function App() {
           path="tv"
           element={
             <Suspense fallback={<div></div>}>
-              <TvDetail />
+              <Tv />
             </Suspense>
           }
         />

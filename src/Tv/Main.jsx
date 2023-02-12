@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 
 function Main() {
   var [id,setid] = useState(window.location.pathname.split('/').at(-2))
+  const [click , setClick] = useState(2)
 
   useEffect(()=>{
     setid(window.location.pathname.split('/').at(-2))
@@ -14,7 +15,7 @@ function Main() {
 
   return (
     <>
-    <Header/>
+    <Header click={click} setClick={setClick}/>
     <Hero id={id} setid={setid}/>
     <Similar id={id} setid={setid}/>
     <Footer/>

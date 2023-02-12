@@ -14,11 +14,11 @@ function Hero({ id, setid }) {
     
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        https://api.themoviedb.org/3/movie/899112/videos?api_key=81ab096fe7e14921b2483fbc2b423c52&language=en-US
+        // https://api.themoviedb.org/3/movie/899112/videos?api_key=81ab096fe7e14921b2483fbc2b423c52&language=en-US
         
         axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=81ab096fe7e14921b2483fbc2b423c52`)
         .then((res) => {
-                console.log(res.data)
+                // console.log(res.data)
                 setCast(res.data.cast)
             })
             .catch((error) => {
@@ -41,7 +41,7 @@ function Hero({ id, setid }) {
         <>
             <div className='flex justify-around absolute top-0' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "100%", height: "50vh", backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat', backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})` }}>
                 <div className='flex popup-background' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "inherit" }}>
-                    <div className='ml-8 mt-40 h-[130px] mr-8'>
+                    <div className='ml-24 mt-40 h-[130px] mr-8'>
                         <div>
                             <img className='h-[485px]' src={"https://image.tmdb.org/t/p/w500/" + data?.poster_path} width={300} height={300} alt="Image" />
                         </div>

@@ -1,12 +1,12 @@
 import React from 'react'
 
-function SearchFiler({input, setInput, search, setSearch}) {
+function SearchFiler() {
     return (
         <>
             <div className='flex flex-wrap mt-4'>
                 <div className='ml-16 w-[400px] flex ' >
-                    <input className='rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Movie' type="text" name="" id="" onChange={(e)=>{setInput(e.target.value)}}/>
-                    <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white' onClick={()=>setSearch(true)}>Search</button>
+                    <input className='rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Season' type="text" name="" id="" />
+                    <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white'>Search</button>
                 </div>
                 <div className='ml-4'>
                     <span>

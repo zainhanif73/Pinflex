@@ -12,8 +12,6 @@ function TrendingShows() {
         .catch((error) => console.error(error))
     }, [])
 
-  console.log("shows", data)    
-
   return (
     <div className='mt-8'>
     <span className='ml-8 mr-4 flex justify-between'>
