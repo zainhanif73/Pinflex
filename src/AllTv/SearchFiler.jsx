@@ -1,16 +1,17 @@
 import React from 'react'
 
-function SearchFiler() {
-    return (
+function SearchFiler({ input, setInput, search, setSearch, region, setRegion, year, setYear }) {
+     return (
         <>
             <div className='flex flex-wrap mt-4'>
                 <div className='ml-16 w-[400px] flex ' >
-                    <input className='rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Season' type="text" name="" id="" />
-                    <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white'>Search</button>
+                    <input className='border-none focus:ring-0 !outline-none rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Season' type="text" name="" id="" onChange={(e) => { setInput(e.target.value) }} />
+                    <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white' onClick={() => setSearch(true)}>Search</button>
                 </div>
                 <div className='ml-4'>
                     <span>
-                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
+                        >
                             <option value="Action" >Action</option>
                             <option value="Adventure" >Adventure</option>
                             <option value="Animation" >Animation</option>
@@ -32,7 +33,8 @@ function SearchFiler() {
                         </select>
                     </span>
                     <span className='ml-4'>
-                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
+                            onChange={(e) => { console.log(e.target.value); setYear(e.target.value) }}>
                             <option value="1971" >1971</option>
                             <option value="1972" >1972</option>
                             <option value="1973" >1973</option>
@@ -66,7 +68,8 @@ function SearchFiler() {
                         </select>
                     </span>
                     <span className='ml-4'>
-                        <select className='hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id="">
+                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
+                            onChange={(e) => { setRegion(e.target.value) }}>
                             <option value="Andorra" >Andorra</option>
                             <option value="United Arab Emirates" >United Arab Emirates</option>
                             <option value="Afghanistan" >Afghanistan</option>
@@ -100,8 +103,9 @@ function SearchFiler() {
                             <option value="South Georgia and the south sandwich islands">South Georgia and the south sandwich islands</option>
                         </select>
                     </span>
-                    <span style={{ transition: "box-shadow .3s ease" }} className='w-fit px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'>
-                      Apply Filter
+                    <span style={{ transition: "box-shadow .3s ease" }} className='w-fit px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
+                        onClick={() => setSearch(true)}>
+                        Apply Filter
                     </span>
                 </div>
             </div>
