@@ -22,12 +22,12 @@ function Similar({ id,setid}) {
 
   return (
     <>
-      <div className='mt-[100vh]'>
+      <div className='mt-[160vh] md:mt-[100vh]'>
         <span className='ml-8 mr-4 flex justify-between'>
           <div className='text-[#ffffff] text-[20px] font-[600]'>Shows you would like to Watch</div>
         </span>
 
-        <span className='mx-8 mt-4 flex overflow-scroll'>
+        <span className='md:mx-8 ml-4 mt-4 flex overflow-scroll'>
           {data && data.length && data.map((data1) => {
             return (
               <div key={data1.poster_path} className=" w-[175px] mx-2 cursor-pointer">

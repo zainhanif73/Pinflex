@@ -17,7 +17,9 @@ function Main() {
     <>
     <Header click={click} setClick={setClick}/>
     <Hero id={id} setid={setid}/>
+    <div className='mt-8'>
     <Similar id={id} setid={setid}/>
+    </div>
     <Footer/>
     </>
   )
