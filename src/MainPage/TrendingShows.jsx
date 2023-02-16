@@ -1,6 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation,Autoplay, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 function TrendingShows() {
     const [data, setdata] = useState(0);
@@ -21,18 +27,63 @@ function TrendingShows() {
       </span>
     </span>
 
-    <span className='mx-8 mt-4 flex overflow-scroll'>
-      {data && data.length && data.map((data1) => {
-        return (
-          <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
-            <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
-              <img onClick={() => { route(`/tv/${data1.id}/${data1.name}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[175px]' style={{ height: "256px" }} />
-            </div>
-          </div>
-        )
-      }
-      )}
-    </span>
+    <span className='mt-4 ml-8 hidden md:flex w-[1220px] flex overflow-scroll'>
+      <Swiper
+          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={0}
+          slidesPerView={6.9}
+          navigation={true}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          autoplay={{
+            delay: 2000,
+            pauseOnMouseEnter: false,
+            disableOnInteraction: false
+           }}
+          loop
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+          >
+        {data && data.length && data.map((data1) => (
+          <SwiperSlide>
+              <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
+                <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
+                  <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
+                </div>
+              </div>
+            </SwiperSlide>
+        ))}
+        </Swiper>
+      </span>
+      <span className='mt-4 ml-8 md:hidden flex w-[300px] overflow-scroll'>
+      <Swiper
+          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={0}
+          slidesPerView={1.66}
+          navigation
+          autoplay={{
+            delay: 2000,
+            pauseOnMouseEnter: false,
+            disableOnInteraction: false
+           }}
+          loop
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+          >
+        {data && data.length && data.map((data1) => (
+          <SwiperSlide>
+              <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
+                <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
+                  <img onClick={() => { route(`/tv/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
+                </div>
+              </div>
+            </SwiperSlide>
+        ))}
+        </Swiper>
+      </span>
+      
   </div>
     )
 }

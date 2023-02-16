@@ -3,12 +3,12 @@ import React from 'react'
 function SearchFiler({ input, setInput, search, setSearch, region, setRegion, year, setYear }) {
      return (
         <>
-            <div className='flex flex-wrap mt-4'>
-                <div className='ml-16 w-[400px] flex ' >
+            <div className='md:flex md:flex-wrap mt-4'>
+                <div className='ml-4 md:ml-16 w-[300px] md:w-[400px] flex ' >
                     <input className='border-none focus:ring-0 !outline-none rounded-l-[10px] w-full h-12 pl-4' placeholder='Search any Season' type="text" name="" id="" onChange={(e) => { setInput(e.target.value) }} />
                     <button className='bg-[#FF0000] text-[13px] h-12 font-[500] rounded-r-[10px] px-4 text-white' onClick={() => setSearch(true)}>Search</button>
                 </div>
-                <div className='ml-4'>
+                <div className='mt-2 md:mt-0 ml-4'>
                     <span>
                         <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
                         >
@@ -32,7 +32,7 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="Western" >Western</option>
                         </select>
                     </span>
-                    <span className='ml-4'>
+                    <span className='ml-4 mr-4'>
                         <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
                             onChange={(e) => { console.log(e.target.value); setYear(e.target.value) }}>
                             <option value="1971" >1971</option>
@@ -64,11 +64,33 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="1997" >1997</option>
                             <option value="1998" >1998</option>
                             <option value="1999" >1999</option>
-                            <option value="2000" >2000</option>
+                            <option value="2001" >2001</option>
+                            <option value="2002" >2002</option>
+                            <option value="2003" >2003</option>
+                            <option value="2004" >2004</option>
+                            <option value="2005" >2005</option>
+                            <option value="2006" >2006</option>
+                            <option value="2007" >2007</option>
+                            <option value="2008" >2008</option>
+                            <option value="2009" >2009</option>
+                            <option value="2010" >2010</option>
+                            <option value="2011" >2011</option>
+                            <option value="2012" >2012</option>
+                            <option value="2013" >2013</option>
+                            <option value="2014" >2014</option>
+                            <option value="2015" >2015</option>
+                            <option value="2016" >2016</option>
+                            <option value="2017" >2017</option>
+                            <option value="2018" >2018</option>
+                            <option value="2019" >2019</option>
+                            <option value="2020" >2020</option>
+                            <option value="2021" >2021</option>
+                            <option value="2022" >2022</option>
+                            <option value="2023" >2023</option>
                         </select>
                     </span>
-                    <span className='ml-4'>
-                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
+                    <span className='ml-0 md:ml-4'>
+                        <select className='w-[200px] mt-4 md:mt-0 focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
                             onChange={(e) => { setRegion(e.target.value) }}>
                             <option value="Andorra" >Andorra</option>
                             <option value="United Arab Emirates" >United Arab Emirates</option>

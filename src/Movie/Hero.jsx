@@ -76,6 +76,9 @@ function Hero({ id, setid }) {
                     </span>
                 </div>
             </div>
+            <div className='mb-[900px] md:mb-[770px]'> 
+
+            </div>
             {/* <div>
             <iframe src={`https://www.2embed.to/embed/imdb/movie?id=${imdb}`} width="320" height="480" ></iframe>
                 <video width="750" height="500" controls >
