@@ -28,12 +28,32 @@ function TopRatedShows() {
         View more
       </span>
     </span>
-
-    <span className='mt-4 ml-8 hidden md:flex w-[1220px] flex overflow-scroll'>
+      <span className='mt-4 mx-8 flex w-[auto] flex overflow-scroll'>
       <Swiper
           modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={0}
-          slidesPerView={6.9}
+          breakpoints={{
+            320: {
+              spaceBetween:0,
+              slidesPerView: 1.6,
+            },
+            479: {
+              spaceBetween:0,
+              slidesPerView: 2.3,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            970: {
+              slidesPerView: 5,
+            },
+            1210: {
+              slidesPerView: 6.6,
+            },
+          }}        
           navigation={true}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -42,6 +62,7 @@ function TopRatedShows() {
             pauseOnMouseEnter: false,
             disableOnInteraction: false
            }}
+           
           loop
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
@@ -57,35 +78,6 @@ function TopRatedShows() {
         ))}
         </Swiper>
       </span>
-      <span className='mt-4 ml-8 md:hidden flex w-[300px] overflow-scroll'>
-      <Swiper
-          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={0}
-          slidesPerView={1.66}
-          autoplay={{
-            delay: 2000,
-            pauseOnMouseEnter: false,
-            disableOnInteraction: false
-           }}
-          loop
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
-          >
-        {data && data.length && data.map((data1) => (
-          <SwiperSlide>
-              <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
-                <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
-                  <img onClick={() => { route(`/tv/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
-                </div>
-              </div>
-            </SwiperSlide>
-        ))}
-        </Swiper>
-      </span>
-      
   </div>
   )
 }

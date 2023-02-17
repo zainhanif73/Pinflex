@@ -11,7 +11,7 @@ function Movies({input, setInput, search, setSearch, region, year}) {
     useEffect(() => {
         if(search || page!=1){
             setData([]);
-            setPage(1);
+            setPage(1)
         }
 
         if (search || (page && input!="")){

@@ -32,34 +32,9 @@ code {
   background: rgba(58, 28, 28, 0.3);
   z-index: 5000;
 }
-
 .swiper-container {
-  width: 100%;
-  height: 100%;
+  width: 480px;
 }
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-/* this is the important part */
-.swiper-container .swiper-slide {
-  width: auto;
-}
-
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -78,4 +53,15 @@ select {
   z-index: 1000;
   transition: box-shadow .3s ease;
   position: relative;
+}
+
+.swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet{
+  display:none;   
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.swiper-scrollbar-drag {
+  display: none;
 }
