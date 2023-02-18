@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Fade, Zoom } from 'react-reveal';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +8,7 @@ function Hero() {
   const route = useNavigate();
   const [youtube, setyoutube] = useState("yYKzccguTOw");
   const [open, setopen] = useState(false);
+  const [videoId, setvideoId] = useState("a53e4HHnx_s");
 
   return (
     <>
@@ -48,6 +50,35 @@ function Hero() {
           </div>
         </div>
       </div>
+
+
+    { open && <div className="popup-background">
+        <div
+          id="popup-modal"
+          tabIndex="100"
+          className=" overflow-y-auto absolute mt-[-354px] md:mt-[-500px] md:ml-[250px] w-[379px] md:w-[600px] h-[600px] overflow-x-hidden fixed tab:left-[30%] desktop:left-[37%] mobile:left-[10%] mobile:top-[0%] mobile:right-[0%] z-[100] md:inset-0"
+        >
+          <div className="relative p-4 ">
+            <div className="relative bg-[#000000] rounded-lg shadow dark:bg-gray-700">
+              <div className=" ">
+                <p className="font-[500] text-[24px] mt-8  ml-8 w-[300px] cursor-pointer pl-[80%] md:pl-[90%] text-end text-[#ffffff]" onClick={()=>{setopen(false)}}>
+                  x
+                </p>
+              
+                <div className='flex'>
+                        <iframe className='video w-[100%] h-[40vh] md:h-[70vh] mx-2 md:w-[960px]'
+                            title='Youtube player'
+                            sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
+                            src={`https://youtube.com/embed/${videoId}?autoplay=0`}>
+                        </iframe>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    }
     </>
   )
 }

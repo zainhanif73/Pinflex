@@ -63,12 +63,12 @@ function TrendingShows() {
            }}
            
           loop
-          onSwiper={(swiper) => console.log(swiper)}
+          //onSwiper={(swiper) => console.log(swiper)}
           // onSlideChange={() => console.log('slide change')}
           >
-        {data && data.length && data.map((data1) => (
+        {data && data.length && data.map((data1,index) => (
           <SwiperSlide>
-              <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
+              <div key={data1.poster_path+""+index} className=" w-[175px] ml-2 cursor-pointer">
                 <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
                   <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
                 </div>
