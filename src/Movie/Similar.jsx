@@ -12,8 +12,6 @@ function Similar({ id,setid}) {
   const [data, setData] = useState();
   const route = useNavigate();
 
-  console.log("sss", id)
-
   useEffect(()=>{
     setid(window.location.pathname.split('/').at(-2))
   },[id])
