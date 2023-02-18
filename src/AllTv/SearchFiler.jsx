@@ -64,6 +64,7 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="1997" >1997</option>
                             <option value="1998" >1998</option>
                             <option value="1999" >1999</option>
+                            <option value="2000" >2000</option>
                             <option value="2001" >2001</option>
                             <option value="2002" >2002</option>
                             <option value="2003" >2003</option>
@@ -125,9 +126,17 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="South Georgia and the south sandwich islands">South Georgia and the south sandwich islands</option>
                         </select>
                     </span>
-                    <span style={{ transition: "box-shadow .3s ease" }} className='w-fit px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
-                        onClick={() => setSearch(true)}>
-                        Apply Filter
+                    <span className='hidden md:contents'>
+                        <span style={{ transition: "box-shadow .3s ease" }} className='w-fit align-center px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
+                            onClick={() => setSearch(true)}>
+                            Apply Filter
+                        </span>
+                    </span>
+                    <span className='mt-4 contents md:hidden'>
+                        <span style={{ transition: "box-shadow .3s ease" }} className='w-fit align-center px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
+                            onClick={() => setSearch(true)}>
+                            Apply Filter
+                        </span>
                     </span>
                 </div>
             </div>

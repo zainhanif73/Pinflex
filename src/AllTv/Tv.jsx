@@ -9,23 +9,27 @@ function Tv({input, setInput, search, setSearch, region, year}) {
     const route = useNavigate();
 
     useEffect(() => {
-        if(search || page!=1){
+        if (search && input!="") {
+            console.log("inside")
             setData([]);
+            data = []
             setPage(1);
         }
-
-        if (search || (page && input!="")){
-            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c8b147e9fe4390650885295607b0a593&include_adult=false&page=${page}&query=${input}&region=${region}&year=${parseInt(year)}`)
-            .then((res) => {setData([...data, ...res.data.results])})
-            .catch((error) => { console.error(error) });
+        if ((search && input!="") || (input!="" && page!==1)) {
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c8b147e9fe4390650885295607b0a593&include_adult=false&page=${page}&query=${input}&region=${region}&year=${parseInt(year)}`)
+                .then((res) => { setData([...data, ...res.data.results]) })
+                .catch((error) => { console.error(error) });
             setSearch(false);
         }
     }, [search, page])
 
     useEffect(() => {
-        if (page === 1 && search===false && input===""){
+        if (page === 1) {
+            console.log(page)
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-            axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=c8b147e9fe4390650885295607b0a593&include_adult=false&page=${page}`)
+        }
+        if (!search && input === ""){
+            axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=c8b147e9fe4390650885295607b0a593&include_adult=false&page=${page}`)
             .then((data1) => { setData([...data, ...data1.data.results]) })
             .catch((error) => { console.error(error); })
         }

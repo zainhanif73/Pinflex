@@ -20,7 +20,7 @@ function TrendingMovie() {
   }, [])
 
   return (
-    <div className='mt-[50vh] md:mt-[20vh]'>
+    <div className='mt-[10px] mt-[50vh] md:mt-[25vh]'>
       <span className='ml-8 mr-4 flex justify-between'>
         <div className='text-[#ffffff] text-[20px] font-[600]'>Trending Movie</div>
         <span className='text-[#ffffff] font-[400] px-2 text-[15px] ml-4 rounded-[3px] border-2 border-[#ffffff] hover:bg-[#ffffff] cursor-pointer hover:text-[#ff0000] p-1 h-[30px]' onClick={() => { route("/movie") }}>
@@ -65,7 +65,7 @@ function TrendingMovie() {
            
           loop
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          // onSlideChange={() => console.log('slide change')}
           >
         {data && data.length && data.map((data1) => (
           <SwiperSlide>

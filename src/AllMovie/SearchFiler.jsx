@@ -10,8 +10,7 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                 </div>
                 <div className='mt-2 md:mt-0 ml-4'>
                     <span>
-                        <select className='focus:ring-0 !outline-none  hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
-                        >
+                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' >
                             <option value="Action" >Action</option>
                             <option value="Adventure" >Adventure</option>
                             <option value="Animation" >Animation</option>
@@ -33,7 +32,7 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                         </select>
                     </span>
                     <span className='ml-4 mr-4'>
-                        <select className= 'focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
+                        <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
                             onChange={(e) => { console.log(e.target.value); setYear(e.target.value) }}>
                             <option value="1971" >1971</option>
                             <option value="1972" >1972</option>
@@ -65,6 +64,29 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="1998" >1998</option>
                             <option value="1999" >1999</option>
                             <option value="2000" >2000</option>
+                            <option value="2001" >2001</option>
+                            <option value="2002" >2002</option>
+                            <option value="2003" >2003</option>
+                            <option value="2004" >2004</option>
+                            <option value="2005" >2005</option>
+                            <option value="2006" >2006</option>
+                            <option value="2007" >2007</option>
+                            <option value="2008" >2008</option>
+                            <option value="2009" >2009</option>
+                            <option value="2010" >2010</option>
+                            <option value="2011" >2011</option>
+                            <option value="2012" >2012</option>
+                            <option value="2013" >2013</option>
+                            <option value="2014" >2014</option>
+                            <option value="2015" >2015</option>
+                            <option value="2016" >2016</option>
+                            <option value="2017" >2017</option>
+                            <option value="2018" >2018</option>
+                            <option value="2019" >2019</option>
+                            <option value="2020" >2020</option>
+                            <option value="2021" >2021</option>
+                            <option value="2022" >2022</option>
+                            <option value="2023" >2023</option>
                         </select>
                     </span>
                     <span className='ml-0 md:ml-4'>
@@ -103,11 +125,20 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                             <option value="South Georgia and the south sandwich islands">South Georgia and the south sandwich islands</option>
                         </select>
                     </span>
-                    <span style={{ transition: "box-shadow .3s ease" }} className='w-fit align-center px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
-                        onClick={() => setSearch(true)}>
-                        Apply Filter
+                    <span className='hidden md:contents'>
+                        <span style={{ transition: "box-shadow .3s ease" }} className='w-fit align-center px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
+                            onClick={() => setSearch(true)}>
+                            Apply Filter
+                        </span>
+                    </span>
+                    <span className='mt-4 contents md:hidden'>
+                        <span style={{ transition: "box-shadow .3s ease" }} className='w-fit align-center px-4 py-4 rounded-[15px] ml-4 text-[#ffffff] text-[10px] font-[400] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer h-[40px] bg-[#ff0000]'
+                            onClick={() => setSearch(true)}>
+                            Apply Filter
+                        </span>
                     </span>
                 </div>
+                
             </div>
         </>
     )

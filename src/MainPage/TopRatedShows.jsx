@@ -65,7 +65,7 @@ function TopRatedShows() {
            
           loop
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          // onSlideChange={() => console.log('slide change')}
           >
         {data && data.length && data.map((data1) => (
           <SwiperSlide>
