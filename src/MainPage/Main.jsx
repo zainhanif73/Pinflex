@@ -11,7 +11,7 @@ function Main() {
     const [click, setClick] = useState(0);
     return (
         <>
-            <div >
+            <div>
                 <Header click={click} setClick={setClick}/>
                 <Hero />
                 <TrendingMovie/>

@@ -7,6 +7,8 @@ function Hero({ id, setid }) {
     const route = useNavigate();
     const [cast, setCast] = useState();
     const [data, setData] = useState();
+    var [imdb, setimdb] = useState("");
+    var [season, setSeason] = useState(""); 
 
     setid(window.location.pathname.split('/').at(-2))
 
@@ -23,6 +25,7 @@ function Hero({ id, setid }) {
         axios.get(`https://api.themoviedb.org/3/tv/${id}?Expires=Thu%2C%2015%20Apr%202030%2020%3A00%3A00%20GMT&api_key=81ab096fe7e14921b2483fbc2b423c52`)
             .then((res) => {
                 setData(res.data);
+                setSeason(res.data.seasons)
             })
             .catch((error) => {
                 console.error(error.data)
@@ -30,7 +33,7 @@ function Hero({ id, setid }) {
 
     }, [id])
 
-    console.log(data)
+    console.log(season[0].episode_count)
 
     return (
         <>
@@ -72,12 +75,25 @@ function Hero({ id, setid }) {
                             }
                         </span>
                     </span>
-
                 </div>
             </div>
 
-            <div className='mb-[840px]'>
-
+            <div className='mb-[50rem] md:mb-[900px] md:mb-[770px]'>
+            </div>
+            <div>
+                <h2 className='ml-2 mb-4 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
+                <span className='flex ml-0 w-max'>
+                {
+                season && season.length && season.map((data, index)=>{
+                    return (
+                    <span onClick={() => { route("/movie/899112/Violent%20Night") }} style={{ transition: "box-shadow .3s ease" }} className='text-[#ffffff] ml-2 mt-8 font-[600] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer px-6 p-2 h-[40px] bg-[#ff0000]'>
+                        Season {index+1}
+                    </span>
+                    )
+                })
+                }
+              </span>
+                <iframe style={{ backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat' }} src={`https://www.2embed.to/embed/tmdb/tv?id=${imdb}&s=1&e=1`} width="100%" height="480" ></iframe>
             </div>
         </>
 

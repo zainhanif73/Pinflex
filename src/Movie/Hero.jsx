@@ -10,13 +10,13 @@ function Hero({ id, setid }) {
     var [imdb, setimdb] = useState("");
 
     setid(window.location.pathname.split('/').at(-2))
-    
-    
+
+
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      
+
         axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=81ab096fe7e14921b2483fbc2b423c52`)
-        .then((res) => {
+            .then((res) => {
                 setCast(res.data.cast)
             })
             .catch((error) => {
@@ -39,7 +39,7 @@ function Hero({ id, setid }) {
             <div className='flex justify-around absolute top-0' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "100%", height: "50vh", backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat', backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})` }}>
                 <div className='flex popup-background' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "inherit" }}>
                     <div className='md:ml-24 mt-40 h-[130px] mr-8 hidden md:flex'>
-                        <div>
+                        <div className='hidden lg:flex'>
                             <img className='h-[485px]' src={"https://image.tmdb.org/t/p/w500/" + data?.poster_path} width={300} height={300} alt="Image" />
                         </div>
                     </div>
@@ -53,7 +53,7 @@ function Hero({ id, setid }) {
                             )
                             }
                         </div>
-                        <p className='text-[#ffffff] md:w-[650px] text-[16px] mt-[27px] font-[400]'>{data?.overview.substring(0,200)}</p>
+                        <p className='text-[#ffffff] md:w-[650px] text-[16px] mt-[27px] font-[400]'>{data?.overview.substring(0, 200)}</p>
                         <span >
                             {
                                 cast && cast.length != 0 && <>
@@ -76,15 +76,12 @@ function Hero({ id, setid }) {
                     </span>
                 </div>
             </div>
-            <div className='mb-[900px] md:mb-[770px]'> 
-
+            <div className='mb-[50rem] md:mb-[900px] md:mb-[770px]'>
             </div>
-            {/* <div>
-            <iframe src={`https://www.2embed.to/embed/imdb/movie?id=${imdb}`} width="320" height="480" ></iframe>
-                <video width="750" height="500" controls >
-                    <source src={`https://www.2embed.to/embed/imdb/movie?id=${imdb}`} type="text/html"/>
-                </video>
-            </div> */}
+            <div>
+                <h2 className='ml-2  mb-4 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
+                <iframe style={{backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat'}} src={`https://www.2embed.to/embed/imdb/movie?id=${imdb}`} width="100%" height="480" ></iframe>
+            </div>
         </>
     )
 }
