@@ -58,7 +58,7 @@ function Hero() {
         <div
           id="popup-modal"
           tabIndex="100"
-          className=" overflow-y-auto absolute mt-[-354px] md:mt-[-500px] md:ml-[250px] w-[379px] md:w-[600px] h-[600px] overflow-x-hidden fixed tab:left-[30%] desktop:left-[37%] mobile:left-[10%] mobile:top-[0%] mobile:right-[0%] z-[100] md:inset-0"
+          className="overflow-y-auto absolute mt-[-354px] md:mt-[-500px] md:ml-[250px] w-[379px] md:w-[600px] h-[600px] overflow-x-hidden fixed tab:left-[30%] desktop:left-[37%] mobile:left-[10%] mobile:top-[0%] mobile:right-[0%] z-[100] md:inset-0"
           >
           <div className="relative p-4 ">
             <div className="relative bg-[#000000] rounded-lg shadow dark:bg-gray-700">

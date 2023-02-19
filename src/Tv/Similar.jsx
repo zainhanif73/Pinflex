@@ -29,7 +29,7 @@ function Similar({ id,setid}) {
   return (
     <>
       <div >
-        <span className='ml-4 md:ml-8  mr-4 flex justify-between'>
+        <span className='ml-4 md:ml-4 mr-4 flex justify-between'>
           <div className='text-[#ffffff] text-[20px] font-[600]'>Shows you would like to Watch</div>
         </span>
 
@@ -73,7 +73,7 @@ function Similar({ id,setid}) {
           >
         {data && data.length && data.map((data1) => (
           <SwiperSlide>
-              <div key={data1.poster_path} className=" w-[175px] ml-2 cursor-pointer">
+              <div key={data1.poster_path} className=" w-[175px] ml-4 cursor-pointer">
                 <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
                   <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
                 </div>

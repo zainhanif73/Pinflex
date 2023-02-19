@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 function Hero({ id, setid }) {
     const route = useNavigate();
     const [cast, setCast] = useState();
-    const [data, setData] = useState();
+    var [data, setData] = useState();
     var [imdb, setimdb] = useState("");
     var [season, setSeason] = useState(""); 
+    var [episode, setEpisode] = useState([false]); 
 
     setid(window.location.pathname.split('/').at(-2))
 
@@ -33,7 +34,12 @@ function Hero({ id, setid }) {
 
     }, [id])
 
-    console.log(season[0].episode_count)
+    function ShowData(num){
+        let check = [...episode];
+        check.fill(false,0)
+        check[num] = !check[num]
+        setEpisode(check)
+    }
 
     return (
         <>
@@ -81,14 +87,29 @@ function Hero({ id, setid }) {
             <div className='mb-[50rem] md:mb-[900px] md:mb-[770px]'>
             </div>
             <div>
-                <h2 className='ml-2 mb-4 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
-                <span className='flex ml-0 w-max'>
+                <h2 className='ml-2 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
+                <span className='flex ml-0 w-max mb-4 absolute'>
                 {
-                season && season.length && season.map((data, index)=>{
+                season && season.length && season.map((data1, index)=>{
                     return (
-                    <span onClick={() => { route("/movie/899112/Violent%20Night") }} style={{ transition: "box-shadow .3s ease" }} className='text-[#ffffff] ml-2 mt-8 font-[600] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer px-6 p-2 h-[40px] bg-[#ff0000]'>
-                        Season {index+1}
-                    </span>
+                        <>
+                            <div className='absoulte mt-4'>
+                            <span style={{ transition: "box-shadow .3s ease" }} className='text-[#ffffff] relative mx-4 mt-4 mb-4 font-[600] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer px-6 p-2 h-[40px] bg-[#ff0000]'
+                                onClick={() => {ShowData(index)}} >
+                                Season {index+1} 
+                            </span>
+                            {data1.episode_count!=0 &&  
+                                    <span className={`mt-8 ml-2 ${episode[index]===true? "block":"hidden"}`}>
+                                    {[...Array(data1.episode_count)].map((e, i)=> {
+                                        return( 
+                                            <p className={`fixed z-10 hover:text-[#ff0000] hover:border-2 text-[#ffffff] relative font-[600] text-[15.3px] rounded-[3px] cursor-pointer px-6 p-2 h-[40px] bg-[#000000] ${i===0?"mt-4":""} `}
+                                            onClick={()=>{console.log(i+1, index+1)}}> Episode {i+1}</p>
+                                        )
+                                    })}
+                                    </span>
+                            }
+                            </div>  
+                        </>
                     )
                 })
                 }
