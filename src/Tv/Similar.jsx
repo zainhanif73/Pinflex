@@ -29,7 +29,7 @@ function Similar({ id,setid}) {
   return (
     <>
       <div >
-        <span className='ml-4 md:ml-4 mr-4 flex justify-between'>
+        <span className='ml-4 md:ml-4 mr-4 mt-4 flex justify-between'>
           <div className='text-[#ffffff] text-[20px] font-[600]'>Shows you would like to Watch</div>
         </span>
 

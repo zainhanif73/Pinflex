@@ -34,7 +34,7 @@ function SearchFiler({ input, setInput, search, setSearch, region, setRegion, ye
                     </span>
                     <span className='ml-4 mr-4'>
                         <select className='focus:ring-0 !outline-none hover:bg-[#ffffff] hover:text-[#000000] p-4 bg-[#0F0F0F] cursor-pointer text-[#ffffff] h-12 text-[12px] font-[500] border rounded-[10px]' name="" id=""
-                            onChange={(e) => { console.log(e.target.value); setYear(e.target.value) }}>
+                            onChange={(e) => { setYear(e.target.value) }}>
                             <option value="1971" >1971</option>
                             <option value="1972" >1972</option>
                             <option value="1973" >1973</option>

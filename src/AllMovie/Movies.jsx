@@ -9,7 +9,6 @@ function Movies({ input, setInput, search, setSearch, region, year }) {
 
     useEffect(() => {
         if (search && input!="") {
-            console.log("inside")
             setData([]);
             data = []
             setPage(1);
@@ -24,7 +23,6 @@ function Movies({ input, setInput, search, setSearch, region, year }) {
 
     useEffect(() => {
         if (page === 1) {
-            console.log(page)
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }
         if (!search && input === ""){

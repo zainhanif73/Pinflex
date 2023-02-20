@@ -10,7 +10,6 @@ function Tv({input, setInput, search, setSearch, region, year}) {
 
     useEffect(() => {
         if (search && input!="") {
-            console.log("inside")
             setData([]);
             data = []
             setPage(1);

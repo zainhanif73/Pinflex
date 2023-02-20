@@ -10,6 +10,8 @@ function Hero({ id, setid }) {
     var [imdb, setimdb] = useState("");
     var [season, setSeason] = useState(""); 
     var [episode, setEpisode] = useState([false]); 
+    var [playSeason, setPlaySeason] = useState(1);
+    var [playEpisode, setPlayEpisode] = useState(1);
 
     setid(window.location.pathname.split('/').at(-2))
 
@@ -26,6 +28,7 @@ function Hero({ id, setid }) {
         axios.get(`https://api.themoviedb.org/3/tv/${id}?Expires=Thu%2C%2015%20Apr%202030%2020%3A00%3A00%20GMT&api_key=81ab096fe7e14921b2483fbc2b423c52`)
             .then((res) => {
                 setData(res.data);
+                setimdb(res.data.id)
                 setSeason(res.data.seasons)
             })
             .catch((error) => {
@@ -34,10 +37,12 @@ function Hero({ id, setid }) {
 
     }, [id])
 
+
     function ShowData(num){
+        console.log(num)
         let check = [...episode];
-        check.fill(false,0)
-        check[num] = !check[num]
+        console.log(check)
+        check[num] = check[num]===true?false:true;
         setEpisode(check)
     }
 
@@ -46,7 +51,7 @@ function Hero({ id, setid }) {
             <div className='flex justify-around absolute top-0' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "100%", height: "50vh", backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat', backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})` }}>
                 <div className='flex popup-background' style={{ backgroundImage: "linear-gradient(0deg,#0f0f0f,rgba(22,19,19,0))", bottom: "0px", width: "inherit" }}>
                     <div className='ml-8 mt-40 h-[130px] mr-8 hidden md:flex'>
-                        <div>
+                        <div className='hidden md:flex'>
                             <img className='h-[485px]' src={"https://image.tmdb.org/t/p/w500/" + data?.poster_path} width={300} height={300} alt="Image" />
                         </div>
                     </div>
@@ -88,7 +93,7 @@ function Hero({ id, setid }) {
             </div>
             <div>
                 <h2 className='ml-2 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
-                <span className='flex ml-0 w-max mb-4 absolute'>
+                <span className='flex ml-0 w-max mb-8 absolute'>
                 {
                 season && season.length && season.map((data1, index)=>{
                     return (
@@ -99,11 +104,11 @@ function Hero({ id, setid }) {
                                 Season {index+1} 
                             </span>
                             {data1.episode_count!=0 &&  
-                                    <span className={`mt-8 ml-2 ${episode[index]===true? "block":"hidden"}`}>
+                                    <span className={`mt-8 ml-2 h-[400px] overflow-scroll ${episode[index]===true? "block":"hidden"}`}>
                                     {[...Array(data1.episode_count)].map((e, i)=> {
                                         return( 
-                                            <p className={`fixed z-10 hover:text-[#ff0000] hover:border-2 text-[#ffffff] relative font-[600] text-[15.3px] rounded-[3px] cursor-pointer px-6 p-2 h-[40px] bg-[#000000] ${i===0?"mt-4":""} `}
-                                            onClick={()=>{console.log(i+1, index+1)}}> Episode {i+1}</p>
+                                            <p className={`fixed z-10 hover:text-[#ff0000] hover:border-2 text-[#ffffff] relative font-[600] text-[15.3px] rounded-[3px] cursor-pointer px-6 p-2 h-[40px] bg-[#000000] ${i===0?"mt-0":""} `}
+                                            onClick={()=>{ setPlayEpisode(i+1); setPlaySeason(index+1);}}> Episode {i+1}</p>
                                         )
                                     })}
                                     </span>
@@ -114,7 +119,7 @@ function Hero({ id, setid }) {
                 })
                 }
               </span>
-                <iframe style={{ backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat' }} src={`https://www.2embed.to/embed/tmdb/tv?id=${imdb}&s=1&e=1`} width="100%" height="480" ></iframe>
+                <iframe className='mt-[65px]' style={{ backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat' }} src={`https://www.2embed.to/embed/tmdb/tv?id=${imdb}&s=${playSeason}&e=${playEpisode}`} width="100%" height="480" ></iframe>
             </div>
         </>
 
