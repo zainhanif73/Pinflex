@@ -89,17 +89,18 @@ function Hero({ id, setid }) {
                 </div>
             </div>
 
-            <div className='mb-[50rem] md:mb-[900px] md:mb-[770px]'>
+            <div className='mb-[79rem] md:mb-[806px]'>
             </div>
             <div>
-                <h2 className='ml-2 text-[1.5rem] text-[#ffffff] font-bold'>Watch Full Movies Below here </h2>
-                <span className='flex ml-0 w-max mb-8 absolute'>
+                <h2 className='ml-2 text-[1.5rem] text-[#ffffff] font-bold mt-4'>Watch Full Movies Below here </h2>
+                <div className='w-[100rem]'>
+                <span className='flex w-max absolute ml-0 mb-16' >
                 {
                 season && season.length && season.map((data1, index)=>{
                     return (
                         <>
-                            <div className='absoulte mt-4'>
-                            <span style={{ transition: "box-shadow .3s ease" }} className='text-[#ffffff] relative mx-4 mt-4 mb-4 font-[600] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer px-6 p-2 h-[40px] bg-[#ff0000]'
+                            <div key={index} className=' absoulte mt-4'>
+                            <span style={{ transition: "box-shadow .3s ease" }} className='text-[#ffffff] relative mx-4 mt-4 mb-4 font-[600] w-[100px] text-[15.3px] hover:shadow-[0_0_7px_8px_rgba(255,0,0,0.6)] shadow-[0_0_7px_8px_rgba(255,0,0,0.3)] rounded-[3px] border-2 border-[#ff0000] cursor-pointer px-6 p-2 h-[40px] bg-[#ff0000]'
                                 onClick={() => {ShowData(index)}} >
                                 Season {index+1} 
                             </span>
@@ -107,8 +108,8 @@ function Hero({ id, setid }) {
                                     <span className={`mt-8 ml-2 h-[400px] overflow-scroll ${episode[index]===true? "block":"hidden"}`}>
                                     {[...Array(data1.episode_count)].map((e, i)=> {
                                         return( 
-                                            <p className={`fixed z-10 hover:text-[#ff0000] hover:border-2 text-[#ffffff] relative font-[600] text-[15.3px] rounded-[3px] cursor-pointer px-6 p-2 h-[40px] bg-[#000000] ${i===0?"mt-0":""} `}
-                                            onClick={()=>{ setPlayEpisode(i+1); setPlaySeason(index+1);}}> Episode {i+1}</p>
+                                            <p key={i} className={`fixed z-10 hover:text-[#ff0000] hover:border-2 text-[#ffffff] relative font-[600] text-[15.3px] cursor-pointer px-6 p-2 h-[40px] bg-[#000000] ${i===0?"mt-0":""} `}
+                                            onClick={()=>{ setPlayEpisode(i+1); setPlaySeason(index+1); ShowData(index)}}> Episode {i+1}</p>
                                         )
                                     })}
                                     </span>
@@ -119,6 +120,7 @@ function Hero({ id, setid }) {
                 })
                 }
               </span>
+                    </div>
                 <iframe className='mt-[65px]' style={{ backgroundSize: 'cover', backgroundPosition: '50%', backgroundRepeat: 'no-repeat' }} src={`https://www.2embed.to/embed/tmdb/tv?id=${imdb}&s=${playSeason}&e=${playEpisode}`} width="100%" height="480" ></iframe>
             </div>
         </>
