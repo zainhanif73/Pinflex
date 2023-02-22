@@ -39,9 +39,7 @@ function Hero({ id, setid }) {
 
 
     function ShowData(num){
-        console.log(num)
         let check = [...episode];
-        console.log(check)
         check[num] = check[num]===true?false:true;
         setEpisode(check)
     }
