@@ -75,7 +75,7 @@ function Similar({ id,setid}) {
           <SwiperSlide>
               <div key={data1.poster_path} className=" w-[175px] ml-4 cursor-pointer">
                 <div className='max-w-[400px] hover:grayscale-[70%] transition ease-in-out delay-150'>
-                  <img onClick={() => { route(`/movie/${data1.id}/${data1.title}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
+                  <img onClick={() => { route(`/tv/${data1.id}/${data1.name}`) }} src={"https://image.tmdb.org/t/p/w500/" + data1.poster_path} alt="" className='max-w-[400px]' style={{ height: "256px" }} />
                 </div>
               </div>
             </SwiperSlide>
