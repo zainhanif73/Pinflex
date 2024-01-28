@@ -17,12 +17,22 @@ body {
 }
 .header-logo{
   font-family: "UnifrakturCook";
-  font-size: 3.4rem;
+  font-size: 2.4rem;
   background-image: conic-gradient(from 180deg at 50% 50%,#fc0148 0deg,#ba7d01 183.75deg,#0198ba 1turn,#0198ba 1turn);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+.year-box {
+  padding: 5px;
+  margin: 5px 5px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #252a41;
+  background-color: rgba(37,42,65,.3137254902);
+  border-radius: 40px;
+  font-size: 12px;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
